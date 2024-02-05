@@ -25,18 +25,6 @@ function draw(){
  }
   
   
-  
-  
-  // numTilesY = Math.floor (cam.height/tile.height);
-  // console.log(numTilesY);
-  
-
-  // }
-  // for (let j = 0; j< numTilesY; j++){
-  //    tiles.push(new Tile(j*(30)))
-  //   console.log(tiles[i+1])
-  // }
-  
   for (let i = 0; i <tiles.length; i++){
     tiles[i].display();
   }
