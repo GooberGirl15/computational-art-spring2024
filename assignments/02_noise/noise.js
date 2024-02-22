@@ -13,7 +13,7 @@ function draw() {
   waveHeight = 400;
   waveSpeed = mouseY/100
   for (i=0; i < width; i++){
-     let num = map((x/frameCount),0,1,8,60);
+  let num = map((x/frameCount),0,1,8,60);
   x = i;
   y = map(noise(x/num,waveSpeed),0,1,0,waveHeight);
   let hue = map(noise(x/mouseX,height/mouseX),0,1,0,360);
