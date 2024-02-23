@@ -3,6 +3,7 @@ class Particle {
         this.pos = createVector(x, y);
         this.vel = createVector(random(-2, 2), random(-1, 1));
         this.acc = createVector(0, 0);
+        colorMode(HSB,360,100,100);
 
         // this.mass = (1, 5);
 
@@ -54,8 +55,7 @@ class Particle {
 display(){
     push();
     noStroke();
-    fill(8,143,125,50);
-    // image(img, this.pos.x, this.pos.y, this.radius*2);
+    fill(frameCount%360, 100, 50);
     ellipse(this.pos.x, this.pos.y, this.radius *2);
     pop();
 }
