@@ -7,9 +7,10 @@ class Particle {
         // this.mass = (1, 5);
 
         // Make the radius have something to do with the mass.
-        this.radius = 5;
+        this.radius = 6;
 
         this.lifetime = 355;
+        this.speed = 1;
     }
 
 
@@ -27,13 +28,19 @@ class Particle {
     //     this.addForce(drag);
     // }
 
+    Jitter(){
+        this.pos.x += random(-this.speed, this.speed);
+        this.pos.y += random(-this.speed, this.speed);
+    }
+
     update() {
         // Movement
         this.vel.add(this.acc);
         this.vel.limit(5); 
         this.pos.add(this.vel)
-        translate(p5.Vector.fromAngle(millis()/1000))
+        // translate(p5.Vector.fromAngle(millis()/350))
         this.addForce(gravity);
+        this.Jitter();
 
         this.lifetime -=2
         if (this.lifetime <0){
@@ -48,7 +55,8 @@ display(){
     push();
     noStroke();
     fill(8,143,125,50);
-    rect(this.pos.x, this.pos.y, this.radius *2);
+    // image(img, this.pos.x, this.pos.y, this.radius*2);
+    ellipse(this.pos.x, this.pos.y, this.radius *2);
     pop();
 }
 }
