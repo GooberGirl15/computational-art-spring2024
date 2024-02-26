@@ -2,7 +2,7 @@
 class FireParticle {
     constructor(x, y, Element, h) {
         this.pos = createVector(mouseX, mouseY);
-        this.vel = createVector(random(-5,2),random(1,-1));
+        this.vel = createVector(random(-1,5),random(-1,-5));
         this.acc = createVector(0, 0);
         this.Element = Element;
         colorMode(HSB,360,100,100);
