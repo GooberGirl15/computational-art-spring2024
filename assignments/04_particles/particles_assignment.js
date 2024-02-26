@@ -1,9 +1,9 @@
 let gravity;
 
 function setup(){
+   createCanvas(800,700);
     waterfall = new ParticleSystem(250,200);
     gravity = createVector(0,0.01);
-    airCanvas = createCanvas(800,700);
     
 
 
@@ -12,7 +12,7 @@ function setup(){
 
 
 function draw(){
-    airCanvas.background(0,80);
+    background(0,80);
     waterfall.update();
 
 }
