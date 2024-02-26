@@ -1,18 +1,15 @@
 
 class WaterParticle {
-    constructor(x, y, Element, h) {
+    constructor() {
         this.pos = createVector(mouseX, mouseY);
         this.vel = createVector(random(-5, 2), random(-1, 1));
         this.acc = createVector(0, 0);
-        this.Element = Element;
         colorMode(HSB,360,100,100);
 
 
-        // Make the radius have something to do with the mass.
         this.size = random(5,8);
 
         this.lifetime = 155;
-        this.speed = 1;
     }
 
     

@@ -8,9 +8,9 @@ class ParticleSystem {
     }
 
     update() {
+        this.airParticles.push(new AirParticle(this.pos.x,this.pos.y));
         this.fireParticles.push(new FireParticle(this.pos.x,this.pos.y));
         this.waterParticles.push(new WaterParticle(this.pos.x,this.pos.y));
-        this.airParticles.push(new AirParticle(this.pos.x,this.pos.y));
         this.earthParticles.push(new EarthParticle(this.pos.x, this.pos.y));
 
 

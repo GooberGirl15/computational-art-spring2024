@@ -1,14 +1,11 @@
 
 class EarthParticle {
-    constructor(x, y, Element, h) {
+    constructor() {
         this.pos = createVector(mouseX, mouseY);
-        this.vel = createVector(random(-2, -4), random(-1, 1));
+        this.vel = createVector(random(2, 4), random(2, 4));
         this.acc = createVector(0, 0);
-        this.Element = Element;
         colorMode(HSB,360,100,100);
 
-
-        // Make the radius have something to do with the mass.
         this.size = random(2,10);
         this.mass = 1;
         this.lifetime = 155;
@@ -31,9 +28,7 @@ class EarthParticle {
     Earth(){
         this.vel.add(this.acc);
         this.vel.limit(5); 
-        this.pos.add(this.vel)
-        // translate(p5.Vector.fromAngle(millis()/350))
-        this.addForce(gravity);
+        this.pos.add(this.vel);
         this.displayEarth();
 
         this.die();
@@ -41,7 +36,6 @@ class EarthParticle {
     
     displayEarth(){
         let earthcolor = color(random(0,40), 50,50);
-        earthcolor.setAlpha(100);
         push();
         noStroke();
         fill(earthcolor);

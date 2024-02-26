@@ -1,16 +1,14 @@
 
 class FireParticle {
-    constructor(x, y, Element, h) {
+    constructor() {
         this.pos = createVector(mouseX, mouseY);
         this.vel = createVector(random(-1,5),random(-1,-5));
         this.acc = createVector(0, 0);
-        this.Element = Element;
         colorMode(HSB,360,100,100);
 
         this.size = random(2,6);
 
         this.lifetime = 155;
-        this.speed = 1;
     }
 
     
