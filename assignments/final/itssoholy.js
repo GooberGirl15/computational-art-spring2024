@@ -10,6 +10,7 @@ let beachFlag = false;
 let bFlyFlag = false;
 let fractalFlag = false;
 let dFuncFlag;
+let startingScreen = true;;
 
 palFlag = new State3();
 
@@ -24,7 +25,7 @@ function preload(){
 
 
 function setup(){
-    createCanvas(800,600);
+    createCanvas(1024,700);
     colorMode(HSB);
     frameRate(30);
 
@@ -86,6 +87,9 @@ function draw(){
         Func.draw3()
     } if (dFuncFlag == 0){
         // clear();
+    } if (startingScreen == true){
+        startScreen();
+
     }
 
 }
@@ -290,8 +294,8 @@ var fall = function Fall(hue){
 }
 
 var asciiJesus = function asciiJesus(){
-    background(0,0,0);
-    image(ascii,width/2,0);
+    background(0,0,100);
+    image(ascii,0,0);
 
 
 }
@@ -541,10 +545,22 @@ function cueList(){
    
 }
 
+function startScreen(){
+    background(0,0,20);
+    textSize(30);
+    fill(190,100,85);
+    text("CLICK TO START",width/2-105,height/2-105);
+    text("THE MUSIC VIDEO EXPERIENCE",width/2-200,height/2);
+
+
+}
+
 function mouseClicked(){
+    startingScreen = false;
     userStartAudio();
     cueList();
     windTempos.play();
     windTempos.jump(171,90);
     windTempos.setVolume(0,3,104);
+
 }
