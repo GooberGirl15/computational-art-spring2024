@@ -52,9 +52,6 @@ function setup(){
 
     Func = new detailFuncs();
     Func.setup();
-
-    Autonomous = new State9();
-    Autonomous.setup();
    
 
 
